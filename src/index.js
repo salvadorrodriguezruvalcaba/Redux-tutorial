@@ -13,9 +13,14 @@ const initialState = {
 }
 
 // 2.- Reducer
-
+// 2.1 add a case for INCREMENT to the reducer
 const reducer = ( state = initialState, action ) => {
   switch (action.type) {
+    case 'INCREMENT':
+      return {
+      ...state,
+      count: state.count + 1,
+     }
     default:
       return state ;
   }
@@ -29,5 +34,6 @@ ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
+
   document.getElementById('root'));
 registerServiceWorker();
